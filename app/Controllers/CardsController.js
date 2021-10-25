@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import { cardsService } from "../Services/CardsService.js";
+import { loadState, saveState } from "../Utils/LocalStorage.js";
 
 function _draw() {
   let cards = ProxyState.cards;
@@ -12,7 +13,9 @@ export class CardsController {
   constructor() {
     ProxyState.on("cards", _draw);
     ProxyState.on("tasks", _draw);
-
+    ProxyState.on("cards", saveState)
+    ProxyState.on("tasks", saveState)
+    loadState()
     _draw()
   }
 
@@ -29,7 +32,10 @@ export class CardsController {
   }
 
   removeCard(id) {
-    cardsService.removeCard(id)
+    let remove = confirm("Are you sure you want to delete this List?")
+    if (remove == true) {
+      cardsService.removeCard(id)
+    }
   }
 
 }

@@ -22,7 +22,8 @@
     <div class="container">
       <form class="row" onsubmit="app.cardsController.addCard()">
         <div class="col-3">
-          <input class="form-control" name="name" minlength="3" maxlength="15" type="text" placeholder="List Name">
+          <input class="form-control" name="name" required minlength="3" maxlength="15" type="text"
+            placeholder="List Name">
         </div>
         <div class="col-1 ">
           <input type="color" name="color" class="form-control form-control-color">
@@ -33,11 +34,10 @@
       </form>
     </div>
     <div class="container-fluid">
-      <div class="row d-flex justify-content-between">
-        <div id="cards">
+      <div class="row" id="cards">
 
 
-        </div>
+
       </div>
     </div>
   </main>

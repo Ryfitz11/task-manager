@@ -16,6 +16,7 @@ class AppState extends EventEmitter {
     new Task(
       {
         name: "ToDo"
+
       }
     )]
 }
