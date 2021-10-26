@@ -6,13 +6,13 @@ function _draw() {
   let tasks = ProxyState.tasks;
   let template = ''
   tasks.forEach(t => template += t.Template);
-
 }
 export class TasksController {
   constructor() {
     ProxyState.on("tasks", _draw);
     _draw()
   }
+
 
   addTask(cardId) {
     window.event.preventDefault()

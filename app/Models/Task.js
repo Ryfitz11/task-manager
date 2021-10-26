@@ -2,7 +2,7 @@ import { generateId } from "../Utils/generateId.js"
 
 export class Task {
   constructor(data) {
-    this.id = data.id || generateId() // TODO change for local storage
+    this.id = data.id || generateId()
     this.name = data.name
     this.completed = data.completed || false
     this.cardId = data.cardId

@@ -11,13 +11,16 @@ export class Card {
 
   get Template() {
     return /*html*/`
-      <div class="col-4" >
+      <div class="col-sm-6 col-md-4 col-lg-3" >
         <div class="card m-2 shadow">
           <div class="card-body ">
             <h4 class="text-uppercase no-select d-flex justify-content-between"
               style="background-color: ${this.color};">${this.name}
               <button class="btn btn-danger" onclick="app.cardsController.removeCard('${this.id}')">X</button>
             </h4>
+            <div id="complete">
+
+            </div>
             <div>
               ${this.getTasks()}
             </div>
